@@ -1,0 +1,101 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>BTS Website</title>
+  <script>
+   
+   // our game definitions
+    let rock = 1;
+    let paper = 2;
+    let scissors = 3;
+
+    function getRandomNumber(minNumber, maxNumber) {
+      return Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
+    }
+
+    function determineChoiceText(choice) {
+      if (choice === rock) {
+        alert ("rock");
+      } else if (choice === paper) {
+        alert ("paper");
+      } else if (choice === scissors) {
+        alert ("scissors");
+      } else {
+        alert ("invalid choice");
+      }
+    }
+
+    function determineWinner(playerChoice, computerChoice) {
+      // check for a tie
+      if (playerChoice === computerChoice) {
+        alert ("It's a tie!");
+      }
+
+      // check for rock
+      if (playerChoice === rock) {
+        if (computerChoice === scissors) {
+          alert ("You win!");
+        } else {
+          alert ("Computer wins!");
+        }
+      }
+
+      // check for paper
+      if (playerChoice === paper) {
+        if (computerChoice === rock) {
+          alert ("You win!");
+        } else {
+          alert ("Computer wins!");
+        }
+      }
+
+      // check for scissors
+      if (playerChoice === scissors) {
+        if (computerChoice === paper) {
+          alert ("You win!");
+        } else {
+          alert ("Computer wins!");
+        }
+      }
+    }
+
+    function playGame() {
+      // selections
+      let player = prompt("Choose: 1 for rock, 2 for paper, 3 for scissors");
+      const MIN = 1;
+      const MAX = 3;
+
+      let computer = getRandomNumber(MIN, MAX);
+
+      let playerChoiceText = determineChoiceText(parseInt(player));
+      let computerChoiceText = determineChoiceText(computer);
+
+      alert("You chose " + playerChoiceText);
+      alert("Computer chose " + computerChoiceText);
+
+      let result = determineWinner(parseInt(player), computer);
+      alert(result);
+
+      if (result === "It's a tie!") {
+        playGame(); // play again if it's a tie
+      }
+    }
+
+    let times = 5;
+    let counter = 1;
+
+    while (counter <= times) {
+      console.log("Hello times " + counter);
+      counter = counter + 1;
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Here is a bit improved version of the game</h1>
+  <p>Some functions added</p>
+</body>
+</html>
+
+
+  

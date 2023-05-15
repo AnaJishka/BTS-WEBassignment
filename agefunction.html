@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Year Display</title>
+</head>
+<body>
+  <script>
+    function displayYears() {
+      let age = prompt("Please enter your age:");
+      let currentYear = new Date().getFullYear();
+      
+      document.write("<h3>Years reached:</h3>");
+      document.write("<ul>");
+
+      for (let year = currentYear - age + 1; year <= currentYear; year++) {
+        document.write("<li>" + year + "</li>");
+      }
+
+      document.write("</ul>");
+    }
+
+    // Call the function to display the years
+    displayYears();
+  </script>
+</body>
+</html>

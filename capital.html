@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Investment Calculator</title>
+</head>
+<body>
+  <script>
+    function calculateCapital() {
+      let amount = parseFloat(prompt("Amount to invest?"));
+      let interestRate = parseFloat(prompt("Annual percentage interest?"));
+      let years = parseInt(prompt("Years?"));
+
+      let capital = amount;
+
+      document.write("<h3>Capital obtained each year:</h3>");
+      document.write("<ul>");
+
+      for (let i = 1; i <= years; i++) {
+        let interest = capital * (interestRate / 100);
+        capital += interest;
+        
+        document.write("<li>Capital after " + i + " year: " + capital.toFixed(2) + "€</li>");
+      }
+
+      document.write("</ul>");
+    }
+
+    // Call the function to calculate and display the capital
+    calculateCapital();
+  </script>
+</body>
+</html>
