@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculate Average</title>
+</head>
+<body>
+  <h1>Calculate Average</h1>
+
+  <script>
+    function calculateAverage(arr) {
+      let sum = arr.reduce((acc, curr) => acc + curr, 0);
+      let average = sum / arr.length;
+      return Math.floor(average);
+    }
+
+    let arrayNumbers = [1, 3, 5, 10];
+    let average = calculateAverage(arrayNumbers);
+
+    document.write("<p>The average is: " + average + "</p>");
+  </script>
+</body>
+</html>

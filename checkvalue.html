@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Check Array for Value</title>
+</head>
+<body>
+  <h1>Check Array for Value</h1>
+
+  <script>
+    function checkArrayForValue(arr, value) {
+      if (typeof value === 'string') {
+        // Case-insensitive search for strings
+        return arr.map(element => (typeof element === 'string' ? element.toLowerCase() : element))
+                  .includes(value.toLowerCase());
+      } else {
+        // Regular search for numbers or non-string values
+        return arr.includes(value);
+      }
+    }
+
+    let array = [1, 'apple', 'Banana', 'orange', 5];
+    let value = 'banana';
+
+    let result = checkArrayForValue(array, value);
+
+    document.write("<p>Does the array contain the value? " + result + "</p>");
+  </script>
+</body>
+</html>
